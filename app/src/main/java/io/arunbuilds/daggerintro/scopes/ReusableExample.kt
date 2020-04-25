@@ -4,6 +4,7 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
+import javax.inject.Provider
 
 @Module
 class ReusableModule {

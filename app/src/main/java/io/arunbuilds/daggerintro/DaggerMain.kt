@@ -24,8 +24,20 @@ class DaggerMain : AppCompatActivity() {
 
         val unscopedComponent = DaggerUnscopedComponent.create()
         for (i in 1..10) {
-            Log.e("Arun", unscopedComponent.giveMeIncrement().toString())
+            Log.d("Arun", unscopedComponent.giveMeIncrement().toString())
         }
+
+
+        val unscopedProvider = unscopedComponent.incrementProvider()
+        val unscopedLazy = unscopedComponent.incrementLazy()
+
+        for (i in 1..10) {
+            Log.d("Unscoped Provider", unscopedProvider.get().toString())
+        }
+        for (i in 1..10) {
+            Log.d("Unscoped Lazy", unscopedLazy.get().toString())
+        }
+
 
     }
 
