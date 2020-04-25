@@ -1,4 +1,4 @@
-package io.arunbuilds.daggerintro.basic_subcomponent
+package io.arunbuilds.daggerintro.basic.basic_subcomponent
 
 import dagger.Component
 import dagger.Module
