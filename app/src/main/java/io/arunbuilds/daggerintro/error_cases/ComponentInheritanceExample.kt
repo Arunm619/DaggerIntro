@@ -1,0 +1,28 @@
+package io.arunbuilds.daggerintro.error_cases
+
+import dagger.Component
+import dagger.Module
+import dagger.Provides
+
+class Thing
+
+@Module
+class ThingModule {
+    @Provides
+    fun providesThing() = Thing()
+}
+
+@Component(modules = [ThingModule::class])
+interface ThingComponent {
+    fun giveMeAThing(): Thing
+}
+/**
+ * This will error, since Dagger does not process super classes for annotations.
+ * That is, InheritingComponent does not inherit the ThingModule.
+ * Only the [ThingComponent.giveMeAThing] method is inherited.
+
+
+@Component
+interface InheritingComponent : ThingComponent {
+}
+*/
