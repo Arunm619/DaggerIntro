@@ -1,4 +1,4 @@
-package io.arunbuilds.daggerintro.basic.basic_subcomponent
+package io.arunbuilds.daggerintro.composition.basic_subcomponent
 
 import dagger.Component
 import dagger.Module
@@ -11,7 +11,8 @@ class Api
 @Module
 class ApiModule {
     @Provides
-    fun providesApi() = Api()
+    fun providesApi() =
+        Api()
 }
 
 class Activity
@@ -19,7 +20,8 @@ class Activity
 @Module
 class ActivityModule {
     @Provides
-    fun providesActivity() = Activity()
+    fun providesActivity() =
+        Activity()
 }
 
 class Tracker @Inject constructor(val activity: Activity, val api: Api)
